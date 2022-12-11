@@ -1,31 +1,28 @@
 import math
+def perfect(n,m):
+ for i in range(n,m+1):
+  c=0.0
+  d=0
+  if(len(str(i))==4):
+       e=even(i)
+       if(e):
+         c=math.sqrt(i)
+         d=int(c)
+         if(c==d):
+           print(i)
+       
+def even(j):
+ count=0
+ while(j>0):
+    rem=j%10
+    if(rem%2==0):
+       count+=1
+    j=int(j/10)
+ if(count==4):
+      return 1
+ else:
+      return 0
 
-
-def even_check(n):
-    for i in str(n):
-        if(int(n)%2!=0):
-            return False
-    return True
-
-def check_p_square(n):
-    if(isInt(math.sqrt(n))==True):
-        return True
-    else:
-        return False
-
-def isInt(x):
-    if x%1 == 0:
-        return True
-    else:
-        return False
-
-def gen_list():
-    a=int(input("enter a 4 digit starting value "))
-    b=int(input("enter a 4 digit ending value "))
-    l=[]
-    for i in range(a,b):
-        if (even_check(i)==True and check_p_square(i)==True):
-            l.append(i)
-    print(l)
-
-gen_list()
+a=int(input("Enter Lower Limit : "))
+b=int(input("\nEnter Upper Limit : :"))
+perfect(a,b)
